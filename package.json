@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "[ -f src/aws-exports.js ] && mv src/aws-exports.js src/aws-exports.ts || ng serve; ng serve",
+    "build": "[ -f src/aws-exports.js ] && mv src/aws-exports.js src/aws-exports.ts || ng build --prod; ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -19,6 +19,12 @@
     "@angular/platform-browser": "~11.2.10",
     "@angular/platform-browser-dynamic": "~11.2.10",
     "@angular/router": "~11.2.10",
+    "@aws-amplify/auth": "^3.4.31",
+    "@aws-amplify/ui-angular": "^1.0.8",
+    "aws-amplify": "^3.4.0",
+    "aws-amplify-angular": "^5.0.57",
+    "aws-appsync": "^4.0.3",
+    "graphql-tag": "^2.12.4",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"
